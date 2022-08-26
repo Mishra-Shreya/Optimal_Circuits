@@ -237,19 +237,22 @@
 
         var id = "light-light1";
         var state = document.getElementById('state');
-
+        var mode;
+        
         if (state.checked) {
           state = "ON";
+          mode = "turn_on";
         } else {
           state = "OFF";
+          mode = "turn_off";
         }
 
         var bright = document.getElementById('brightness').value
         // var color = document.getElementById('colourtemp').value
 
-        // var url = "https://" + ip + "/light/light4/turn_on";
-        // var text_final = "http://" + ip + "/light/light1/turn_on?id=" + id + "&state=" + state + "&brightness=" + bright + "&color_temperature=" + color;
-        var text = "http://" + ip + "/light/light1/turn_on?id=" + id + "&state=" + state + "&brightness=" + bright;
+        // var url = "https://" + ip + "/light/light4/" + mode";
+        // var text_final = "http://" + ip + "/light/light1/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright + "&color_temperature=" + color;
+        var text = "http://" + ip + "/light/light1/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
         
         console.log(text);
         document.getElementById("form").action = text;
