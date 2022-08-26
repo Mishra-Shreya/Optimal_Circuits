@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Optimal Circuits!</title>
+  <link rel="icon" href="Logo2.png">
+
+  <link href="styles/stylehome.css" rel="stylesheet">
+  <link href="styles/bootstarp.css" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Custom fonts for this template -->
+  <link href="/static/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/static/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+
+  <!-- Custom styles for this template -->
+  <!-- <link href="/static/landing-page.min.css" rel="stylesheet">
+
+  <link href="/static/sb-admin-2.min.css" rel="stylesheet"> -->
+
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+  <!-- Latest compiled and minified CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .bg {
+      /* The image used */
+      /* background-image: url("templates/bg-horizontal.gif"); */
+      background-image: radial-gradient(rgb(9, 51, 167), rgb(0, 10, 99), rgb(0, 0, 0));
+
+      /* Full height */
+      /* width: 100%;  */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: right;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 25vw;
+      object-fit: contain;
+    }
+
+    .img {
+      border-radius: 50%;
+    }
+
+    .img-round {
+      height: 2em;
+      width: 2em
+    }
+
+    .img-fluid {
+      height: 10em;
+      width: 10em
+    }
+
+    .hide {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 1px;
+      height: 1px;
+    }
+  </style>
+
+</head>
+
+<body class="bg">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Optimal Circuits!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto">
+
+          <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Optimal Circuits!</a>
+              </li> -->
+
+          <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li> -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+
+
+        </ul>
+
+        <!--<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>-->
+
+      </div>
+    </div>
+
+  </nav>
+
+  <section class="bg">
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- <div class="bg-light justify-content-center align-self-center text-center col-lg-7 mb-lg-0"> 
+            <div class="mx-auto my-5 mb-lg-0">
+                <h3>Hello there!</h3>
+                <p class="lead mb-0">You can login with your credentials here!</p>
+            </div>
+        </div> -->
+        <center>
+          <!-- style="background-image:'templates/cardbg.png'" -->
+          <div class="col-lg-6 mb-lg-0">
+            <div class="card card-signin mx-auto mb-lg-0 my-5">
+              <div class="card-body">
+                <br>
+                <h5 class="card-title text-center">Controls</h5>
+
+
+                <br>
+
+                
+                
+                  <iframe name="hiddenFrame" class="hide"></iframe>
+                  <form class="form-signin" method="POST" id="form" target="hiddenFrame">
+
+                    <div class="form-label-group">
+                      <label>Enter IP Address</label>
+                      <div class="row g-7">
+                        <div class="col-md-2">
+                          <input type="text" id="ip1" class="form-control" placeholder="ip1" name="ip1" required>
+                        </div>
+                        <div class="col-md-1">
+                          <h5 style="margin-bottom:0; margin-top:10px">.</h5>
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" id="ip2" class="form-control" placeholder="ip2" name="ip2" required>
+                        </div>
+                        <div class="col-md-1">
+                          <h5 style="margin-bottom:0; margin-top:10px">.</h5>
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" id="ip3" class="form-control" placeholder="ip3" name="ip3" required>
+                        </div>
+                        <div class="col-md-1">
+                          <h5 style="margin-bottom:0; margin-top:10px">.</h5>
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" id="ip4" class="form-control" placeholder="ip4" name="ip4" required>
+                        </div>
+    
+                      </div>
+                    </div>
+    
+                    <br>
+    
+
+                    <div class="form-label-group">
+                      <label for="customRange3" class="form-label">OFF / ON</label>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <!-- Rounded switch -->
+                      <label class="switch">
+
+                        <input type="checkbox" oninput="query()" id="state" name="state">
+                        <span class="slider round"></span>
+
+                      </label>
+                    </div>
+
+                    <br>
+
+                    <div class="form-label-group">
+                      <label for="customRange3" class="form-label">Brightness</label> <br>
+                      <input type="range" name="brightness" id="brightness" oninput="query()" class="form-range" min="0"
+                        max="255" step="1" id="customRange3">
+
+                    </div>
+
+                    <br>
+
+
+                    <div class="form-label-group">
+                      <label for="customRange3" class="form-label">Colour Temperature</label> <br>
+                      <input type="range" name="colourtemp" id="colourtemp" oninput="query()" class="form-range" min="0"
+                        max="100" step="1" id="customRange3"
+                        style="background-image: linear-gradient( to right,orange,rgb(255, 255, 255),rgb(135, 223, 255)) !important; ">
+
+                    </div>
+
+                    <br>
+
+
+
+                    <!-- <button class="btn btn-lg btn-primary btn-block text-uppercase mb-3" type="submit">Login</button> -->
+
+
+                  </form>
+
+                  <!-- <h4 id="message"></h4> -->
+              </div>
+            </div>
+          </div>
+        </center>
+
+
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- Footer -->
+  <!-- <footer class="footer bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left mb-lg-5 my-5">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="#">About</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right mb-lg-5 my-5">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="https://www.linkedin.com/in/shreya-sanjay-mishra/">
+              <i class="fab fa-linkedin fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="https://github.com/Mishra-Shreya/">
+              <i class="fab fa-github fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/jquery/jquery.min.js"></script>
+  <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // function query() {
+    //     // 192.168.0.170/light/light4
+
+    // }
+
+    function query(event) {
+      var ip1 = document.getElementById('ip1').value;
+      var ip2 = document.getElementById('ip2').value;
+      var ip3 = document.getElementById('ip3').value;
+      var ip4 = document.getElementById('ip4').value;
+
+      if ((ip1 != '') && (ip2 != '') && (ip3 != '') && (ip4 != '')) {
+        var ip = ip1 + '.' + ip2 + '.' + ip3 + '.' + ip4;
+        // document.getElementById('message').innerHTML = "checking";
+
+        var id = "light-light1";
+        var state = document.getElementById('state');
+
+        if (state.checked) {
+          state = "ON";
+        } else {
+          state = "OFF";
+        }
+
+        var bright = document.getElementById('brightness').value
+        var color = document.getElementById('colourtemp').value
+
+        // const data = {
+        //   // 'id' : document.getElementById('id').value,
+        //   'id': "light-light4",
+        //   'state': state,
+        //   'brightness': document.getElementById('brightness').value,
+        //   'colourtemp': document.getElementById('colourtemp').value
+        // };
+        // const other_params = {
+        //   headers: { "content-type": "application/json; charset=UTF-8" },
+        //   body: data,
+        //   method: "POST",
+        //   mode: "cors"
+        // };
+
+        // var url = "https://" + ip + "/light/light4/turn_on";
+        var text = "http://" + ip + "/light/light1/turn_on?id=" + id + "&state=" + state + "&brightness=" + bright
+        + "&color_temperature=" + color;
+        
+        console.log(text);
+        document.getElementById("form").action = text;
+        document.getElementById("form").submit();
+      }
+    }
+
+    // function query(event) {
+
+    // document.getElementById("form").submit();
+
+    // document.getElementById('message').innerHTML = "checking";
+
+    // var state = document.getElementById('state');
+
+    // if (state.checked){
+    //     state = "ON";
+    // } else {
+    //     state = "OFF";
+    // }
+
+    // // const url = "https://192.168.0.170/light/light4";
+    // const url = "about.html";
+
+    // const data = {
+    //     // 'id' : document.getElementById('id').value,
+    //     'id' : "light-light4",
+    //     'state' : state,
+    //     'brightness' : document.getElementById('brightness').value,
+    //     'colourtemp' : document.getElementById('colourtemp').value
+    // };
+    // const other_params = {
+    //     headers : { "content-type" : "application/json; charset=UTF-8" },
+    //     body : data,
+    //     method : "POST",
+    //     mode : "cors"
+    // };
+
+    // fetch(url, other_params)
+    //     .then(function(response) {
+    //         if (response.ok) {
+    //             alert(response.json());
+    //             console.log(response.json())
+    //         } else {
+    //             throw new Error("Could not reach the API: " + response.statusText);
+    //         }
+    //     }).then(function(data) {
+    //         document.getElementById("message").innerHTML = data.encoded;
+    //     }).catch(function(error) {
+    //         document.getElementById("message").innerHTML = error.message;
+    //     });
+    // return false;
+    // }
+    // return
+  </script>
+
+
+
+</body>
+
+</html>
