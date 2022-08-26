@@ -193,7 +193,6 @@
 
                     <br>
 
-
                     <!-- <div class="form-label-group">
                       <label for="customRange3" class="form-label">Colour Temperature</label> <br>
                       <input type="range" name="colourtemp" id="colourtemp" oninput="query()" class="form-range" min="0"
@@ -204,6 +203,8 @@
 
                     <br> -->
 
+
+                    
                     <!-- <button class="btn btn-lg btn-primary btn-block text-uppercase mb-3" type="submit">Login</button> -->
 
                   </form>
@@ -220,38 +221,7 @@
 
   </section>
 
-  <!-- Footer -->
-  <!-- <footer class="footer bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 h-100 text-center text-lg-left mb-lg-5 my-5">
-        <ul class="list-inline mb-2">
-          <li class="list-inline-item">
-            <a href="#">About</a>
-          </li>
-          <li class="list-inline-item">&sdot;</li>
-          <li class="list-inline-item">
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-6 h-100 text-center text-lg-right mb-lg-5 my-5">
-        <ul class="list-inline mb-0">
-          <li class="list-inline-item mr-3">
-            <a href="https://www.linkedin.com/in/shreya-sanjay-mishra/">
-              <i class="fab fa-linkedin fa-2x fa-fw"></i>
-            </a>
-          </li>
-          <li class="list-inline-item mr-3">
-            <a href="https://github.com/Mishra-Shreya/">
-              <i class="fab fa-github fa-2x fa-fw"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer> -->
+  
 
   <script>
 
@@ -278,8 +248,7 @@
         // var color = document.getElementById('colourtemp').value
 
         // var url = "https://" + ip + "/light/light4/turn_on";
-        var text_final = "http://" + ip + "/light/light1/turn_on?id=" + id + "&state=" + state + "&brightness=" + bright
-        + "&color_temperature=" + color;
+        // var text_final = "http://" + ip + "/light/light1/turn_on?id=" + id + "&state=" + state + "&brightness=" + bright + "&color_temperature=" + color;
         var text = "http://" + ip + "/light/light1/turn_on?id=" + id + "&state=" + state + "&brightness=" + bright;
         
         console.log(text);
@@ -288,52 +257,7 @@
       }
     }
 
-    // function query(event) {
-
-    // document.getElementById("form").submit();
-
-    // document.getElementById('message').innerHTML = "checking";
-
-    // var state = document.getElementById('state');
-
-    // if (state.checked){
-    //     state = "ON";
-    // } else {
-    //     state = "OFF";
-    // }
-
-    // // const url = "https://192.168.0.170/light/light4";
-    // const url = "about.html";
-
-    // const data = {
-    //     // 'id' : document.getElementById('id').value,
-    //     'id' : "light-light4",
-    //     'state' : state,
-    //     'brightness' : document.getElementById('brightness').value,
-    //     'colourtemp' : document.getElementById('colourtemp').value
-    // };
-    // const other_params = {
-    //     headers : { "content-type" : "application/json; charset=UTF-8" },
-    //     body : data,
-    //     method : "POST",
-    //     mode : "cors"
-    // };
-
-    // fetch(url, other_params)
-    //     .then(function(response) {
-    //         if (response.ok) {
-    //             alert(response.json());
-    //             console.log(response.json())
-    //         } else {
-    //             throw new Error("Could not reach the API: " + response.statusText);
-    //         }
-    //     }).then(function(data) {
-    //         document.getElementById("message").innerHTML = data.encoded;
-    //     }).catch(function(error) {
-    //         document.getElementById("message").innerHTML = error.message;
-    //     });
-    // return false;
-    // }
+    
     // return
   </script>
 
