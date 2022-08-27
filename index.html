@@ -14,17 +14,10 @@
   
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
 
   <link href="styles/stylehome.css" rel="stylesheet">
   <link href="styles/bootstarp.css" rel="stylesheet">
-
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-  <!-- <script src="/js/multiselect.js"></script> -->
-  <!-- <script>
-    $('select').selectpicker();
-  </script> -->
+  <link href="styles/select.css" rel="stylesheet">
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -145,7 +138,7 @@
         <center>
           <!-- style="background-image:'templates/cardbg.png'" -->
           <div class="col-lg-7 mb-lg-0 ">
-            <div class="card card-signin mx-auto mb-lg-0 my-5">
+            <div class="card card-signin mx-auto mb-lg-0 my-4">
               <div class="card-body">
                 <br>
                 <h5 class="card-title text-center">Connection Setting</h5>                
@@ -158,30 +151,30 @@
                     <div class="form-label-group d-flex ">
                       <div class="row g-2 align-items-center">
                         <div class="col-md-3 text-start">
-                          <label>Enter IP Address</label>
+                          <label>Enter IP Address*</label>
                         </div>
                         <div class="col-md-9">
                           <div class="row g-7 ">
                           <div class="col-md-2">
-                            <input type="text" id="ip1" class="form-control" placeholder="ip1" name="ip1" required>
+                            <input type="text" id="ip1" class="form-control" placeholder="###" name="ip1" required>
                           </div>
                           <div class="col-md-1">
                             <h6 style="margin-bottom:0; margin-top:10px">.</h6>
                           </div>
                           <div class="col-md-2">
-                            <input type="text" id="ip2" class="form-control" placeholder="ip2" name="ip2" required>
+                            <input type="text" id="ip2" class="form-control" placeholder="###" name="ip2" required>
                           </div>
                           <div class="col-md-1">
                             <h6 style="margin-bottom:0; margin-top:10px">.</h6>
                           </div>
                           <div class="col-md-2">
-                            <input type="text" id="ip3" class="form-control" placeholder="ip3" name="ip3" required>
+                            <input type="text" id="ip3" class="form-control" placeholder="###" name="ip3" required>
                           </div>
                           <div class="col-md-1">
                             <h6 style="margin-bottom:0; margin-top:10px">.</h6>
                           </div>
                           <div class="col-md-2">
-                            <input type="text" id="ip4" class="form-control" placeholder="ip4" name="ip4" required>
+                            <input type="text" id="ip4" class="form-control" placeholder="###" name="ip4" required>
                           </div>
       
                         </div>
@@ -198,15 +191,15 @@
                     
                     <div class="form-label-group">
                       <div class="row g-2 align-items-center">
-                        <label for="customRange3" class="form-label col-md-6 text-start">Select Lights</label>
+                        <label for="lights" class="form-label col-md-3 text-start">Select Light/s</label>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
                         <!-- Rounded switch -->
-                        <div class="col-md-6 ">
-                          <select class="selectpicker float-end" id="lights" multiple data-live-search="true">
-                            <option value="1">Light-1</option>
-                            <option value="2">Light-2</option>
-                            <option value="3">Light-3</option>
-                            <option value="4">Light-4</option>
+                        <div class="col-md-9" style="margin-top: 0;">
+                          <select class="selectpicker float-end" id="lights" multiple data-live-search="true" required>
+                            <option value="light-light3">Light-1</option>
+                            <option value="light-light4">Light-2</option>
+                            <option value="light-light5">Light-3</option>
+                            <!-- <option value="light-light6">Light-4</option> -->
                           </select>
                         </div>
                       </div>
@@ -216,13 +209,13 @@
 
                     <div class="form-label-group">
                       <div class="row g-2 align-items-center">
-                        <label for="customRange3" class="form-label col-md-6 text-start">OFF / ON</label>
+                        <label for="state" class="form-label col-md-6 text-start">OFF / ON</label>
                       <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
                       <!-- Rounded switch -->
                       <div class="col-md-6">
                         <label class="switch float-end">
 
-                          <input type="checkbox" oninput="query()" id="state" name="state">
+                          <input type="checkbox" oninput="query()" id="state" name="state" required>
                           <span class="slider round"></span>
 
                         </label>
@@ -238,10 +231,11 @@
 
                     <div class="form-label-group">
                       <div class="row g-2 align-items-center">
-                        <label for="customRange3" class="form-label col-md-3 text-start">Brightness</label> <br>
+                        <label for="brightness" class="form-label col-md-3 text-start">Brightness</label> <br>
                         <div class="col-md-9">
+                          <!-- <output class="bubble"></output> -->
                           <input type="range" name="brightness" id="brightness" oninput="query()" class="form-range" min="0"
-                        max="255" step="1" id="customRange3"
+                        max="255" step="1"
                         style="background-image: linear-gradient( to right,rgb(255, 255, 255),rgb(255, 255, 0)) !important; ">
                         </div>
                       </div>
@@ -251,19 +245,19 @@
 
                     <div class="form-label-group">
                       <div class="row g-2 align-items-center">
-                        <label for="customRange3" class="form-label col-md-3 text-start">Colour Temperature</label> <br>
+                        <label for="colourtemp" class="form-label col-md-3 text-start">Colour Temperature</label> <br>
                         <div class="col-md-9">
-                          <input type="range" name="colourtemp" id="colourtemp" oninput="query()" class="form-range" min="0"
-                          max="100" step="1" id="customRange3"
-                          style="background-image: linear-gradient( to right,orange,rgb(255, 255, 255),rgb(135, 223, 255)) !important; ">
+                          <input type="range" name="colourtemp" id="colourtemp" oninput="query()" class="form-range" 
+                          min="100"
+                          max="500" 
+                          step="0.1"
+                          style="background-image: linear-gradient( to right,rgb(135, 223, 255), rgb(255, 255, 255), rgb(255, 196, 0)) !important; ">
                         </div>
                       </div>
                     </div>
-
+                    <!-- step="0.1" -->
                     <br>
 
-
-                    
                     <!-- <button class="btn btn-lg btn-primary btn-block text-uppercase mb-3" type="submit">Login</button> -->
 
                   </form>
@@ -280,6 +274,20 @@
 
   </section>
 
+  <!-- <script>
+    const
+    range = document.getElementById('range'),
+    rangeV = document.getElementById('rangeV'),
+    setValue = ()=>{
+      const
+        newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
+        newPosition = 10 - (newValue * 0.2);
+      rangeV.innerHTML = `<span>${range.value}</span>`;
+      rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+    };
+  document.addEventListener("DOMContentLoaded", setValue);
+  range.addEventListener('input', setValue);
+  </script> -->
   
 
   <script>
@@ -298,12 +306,19 @@
       }
       console.log(selected_lights)
 
+      // for (let i = 0; i < selected_lights.length; i++) {
+      //     console.log(selected_lights[i]);
+      // }
 
-      if ((ip1 != '') && (ip2 != '') && (ip3 != '') && (ip4 != '')) {
+      if ((ip1 != '') && (ip2 != '') && (ip3 != '') && (ip4 != '') &&
+          // (!isNaN(ip1)) && (!isNaN(ip2)) && (!isNaN(ip3)) && (!isNaN(ip4)) &&
+          // (ip1 >= '0') && (ip2 >= '0') && (ip3 >= '0') && (ip4 >= '0') &&
+          // (ip1 <= '255') && (ip2 <= '255') && (ip3 <= '255') && (ip4 <= '255') &&
+          selected_lights.length>0) {
         var ip = ip1 + '.' + ip2 + '.' + ip3 + '.' + ip4;
         // document.getElementById('message').innerHTML = "checking";
 
-        var id = "light-light1";
+        
         var state = document.getElementById('state');
         var mode;
 
@@ -315,17 +330,36 @@
           mode = "turn_off";
         }
 
-        var bright = document.getElementById('brightness').value
-        // var color = document.getElementById('colourtemp').value
+        var bright = document.getElementById('brightness').value;
+        var color = document.getElementById('colourtemp').value;
 
         // var url = "https://" + ip + "/light/light4/" + mode";
         // var text_final = "http://" + ip + "/light/light1/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright + "&color_temperature=" + color;
-        var text = "http://" + ip + "/light/light1/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
+        // var text = "http://" + ip + "/light/light1/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
+
+
+        for (let i = 0; i < selected_lights.length; i++) {
+          var id = selected_lights[i];
+          // console.log(selected_lights[i]);
+          var light_id = "light" + selected_lights[i].slice(-1);
+          console.log(light_id);
+          if (light_id == 'light5'){
+            var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright + "&color_temp=" + color;
+          }
+          else {
+            var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
+          }
+          // var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
+          
+
+          console.log(text);
+          document.getElementById("form").action = text;
+          document.getElementById("form").submit();
+        }
         
-        console.log(text);
-        document.getElementById("form").action = text;
-        document.getElementById("form").submit();
-      }
+        
+      } 
+
     }
     // return
   </script>
