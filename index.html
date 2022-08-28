@@ -191,15 +191,18 @@
                     
                     <div class="form-label-group">
                       <div class="row g-2 align-items-center">
-                        <label for="lights" class="form-label col-md-3 text-start">Select Light/s</label>
+                        <label for="lights" class="form-label col-md-3 text-start">Select Light</label>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
                         <!-- Rounded switch -->
                         <div class="col-md-9" style="margin-top: 0;">
-                          <select class="selectpicker float-end" id="lights" multiple data-live-search="true" required>
-                            <option value="light-light3">Light-1</option>
-                            <option value="light-light4">Light-2</option>
-                            <option value="light-light5">Light-3</option>
-                            <!-- <option value="light-light6">Light-4</option> -->
+                          <select class="selectpicker float-end" id="lights" multiple data-live-search="true"  required>
+                            <option value="light-light1">Profile Light</option>
+                            <option value="light-light2">Strip Light-1</option>
+                            <option value="light-light3">Spot Light</option>
+                            <option value="light-light4">Strip Light-2</option>
+                            <option value="light-light5">Spot Light (CTC)</option>
+                            <!-- <option value="light-light6">Light-6</option> -->
+                            <!-- multiple -->
                           </select>
                         </div>
                       </div>
@@ -304,14 +307,14 @@
         selected_lights.push(option.value);
         }
       }
-      console.log(selected_lights)
+      // console.log(selected_lights)
 
       // for (let i = 0; i < selected_lights.length; i++) {
       //     console.log(selected_lights[i]);
       // }
 
       if ((ip1 != '') && (ip2 != '') && (ip3 != '') && (ip4 != '') &&
-          // (!isNaN(ip1)) && (!isNaN(ip2)) && (!isNaN(ip3)) && (!isNaN(ip4)) &&
+          (!isNaN(ip1)) && (!isNaN(ip2)) && (!isNaN(ip3)) && (!isNaN(ip4)) &&
           // (ip1 >= '0') && (ip2 >= '0') && (ip3 >= '0') && (ip4 >= '0') &&
           // (ip1 <= '255') && (ip2 <= '255') && (ip3 <= '255') && (ip4 <= '255') &&
           selected_lights.length>0) {
@@ -337,30 +340,41 @@
         // var text_final = "http://" + ip + "/light/light1/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright + "&color_temperature=" + color;
         // var text = "http://" + ip + "/light/light1/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
 
-
         for (let i = 0; i < selected_lights.length; i++) {
-          var id = selected_lights[i];
-          // console.log(selected_lights[i]);
-          var light_id = "light" + selected_lights[i].slice(-1);
-          console.log(light_id);
-          if (light_id == 'light5'){
-            var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright + "&color_temp=" + color;
-          }
-          else {
-            var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
-          }
-          // var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
           
-
-          console.log(text);
-          document.getElementById("form").action = text;
-          document.getElementById("form").submit();
+            var id = selected_lights[i];
+            // console.log(selected_lights[i]);
+            var light_id = "light" + selected_lights[i].slice(-1);
+            // console.log(light_id);
+            if (light_id == 'light5'){
+              var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright + "&color_temp=" + color;
+            }
+            else {
+              var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
+            }
+            // var text = "http://" + ip + "/light/" + light_id + "/" + mode + "?id=" + id + "&state=" + state + "&brightness=" + bright;
+            
+            task(i, text);
+            
+            // // setTimeout(function() {
+            // document.getElementById("form").action = text;
+            //   document.getElementById("form").submit();
+            // // }, delayInMilliseconds);
         }
         
         
       } 
 
     }
+
+    function task(i, text) {
+      setTimeout(function() {
+        console.log(text);
+        document.getElementById("form").action = text;
+        document.getElementById("form").submit();
+      }, 100 * i);
+    }
+      
     // return
   </script>
 
