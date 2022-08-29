@@ -97,30 +97,6 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <!-- <img class="img img-round"
-                    src="{{url_for('static', filename='undraw_profile.svg')}}">   -->
-              <span class="mr-2 d-none d-lg-inline">Settings</span>
-            </a>
-            <!-- Dropdown - User Information -->
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="userDropdown">
-                <!--<a class="dropdown-item" href="#">
-                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
-                </a>-->
-                <!-- <div class="dropdown-divider"></div> -->
-                <!-- href="{{ url_for('auth.logout') }}" -->
-                <a class="dropdown-item"  data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Connect
-                </a>
-            </div>
-          </li>
-        </ul>
-
       </div>
     </div>
 
@@ -137,17 +113,17 @@
           <div class="col-lg-7 mb-lg-0 ">
             <div class="card card-signin mx-auto mb-lg-0 my-4">
               <div class="card-body">
-                <br  style="display: none;">
-                <h5 class="card-title text-center"  style="display: none;">Connection Setting</h5>                
+                <br>
+                <h5 class="card-title text-center">Connection Setting</h5>                
                 
                   <iframe name="hiddenFrame" class="hide"></iframe>
                   <form class="form-signin" method="POST" id="form" target="hiddenFrame">
 
-                    <br  style="display: none;">
+                    <br>
                     
-                    <div class="form-label-group d-flex">
-                      <div class="row g-2 align-items-center"  style="display: none;">
-                        <div class="col-md-3 text-start" >
+                    <div class="form-label-group d-flex ">
+                      <div class="row g-2 align-items-center">
+                        <div class="col-md-3 text-start">
                           <label>Enter IP Address*</label>
                         </div>
                         <div class="col-md-9">
@@ -261,80 +237,13 @@
 
   </section>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Connect!</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-              <div class="form-label-group d-flex ">
-                <div class="row g-2 align-items-center">
-                  <div class="col-md-3 text-start">
-                    <label>Enter IP Address*</label>
-                  </div>
-                  <div class="col-md-9">
-                    <div class="row g-7 ">
-                      <div class="col-md-2">
-                        <input type="text" id="ip11" class="form-control" placeholder="###" name="ip11" required>
-                      </div>
-                      <div class="col-md-1">
-                        <h6 style="margin-bottom:0; margin-top:10px">.</h6>
-                      </div>
-                      <div class="col-md-2">
-                        <input type="text" id="ip22" class="form-control" placeholder="###" name="ip22" required>
-                      </div>
-                      <div class="col-md-1">
-                        <h6 style="margin-bottom:0; margin-top:10px">.</h6>
-                      </div>
-                      <div class="col-md-2">
-                        <input type="text" id="ip33" class="form-control" placeholder="###" name="ip33" required>
-                      </div>
-                      <div class="col-md-1">
-                        <h6 style="margin-bottom:0; margin-top:10px">.</h6>
-                      </div>
-                      <div class="col-md-2">
-                        <input type="text" id="ip44" class="form-control" placeholder="###" name="ip44" required>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" class="close" data-dismiss="modal" aria-label="Close" id="save" onclick="ip()">Save</a>
-            </div>
-        </div>
-    </div>
-  </div>
-
   <script>
-      var ip1;
-      var ip2;
-      var ip3;
-      var ip4;
-
-    function ip(event) {
-      globalThis.ip1 = document.getElementById('ip11').value;
-      globalThis.ip2 = document.getElementById('ip22').value;
-      globalThis.ip3 = document.getElementById('ip33').value;
-      globalThis.ip4 = document.getElementById('ip44').value;
-    }
 
     function query(event) {
-      // console.log(typeof globalThis.ip1);
-      // console.log(globalThis.ip2);
-      // console.log(globalThis.ip3);
-      // console.log(globalThis.ip4);
+      var ip1 = document.getElementById('ip1').value;
+      var ip2 = document.getElementById('ip2').value;
+      var ip3 = document.getElementById('ip3').value;
+      var ip4 = document.getElementById('ip4').value;
 
       var selected_lights = [];
       for (var option of document.getElementById('lights').options) {
@@ -343,13 +252,13 @@
         }
       }
 
-      if ((globalThis.ip1 != '') && (globalThis.ip2 != '') && (globalThis.ip3 != '') && (globalThis.ip4 != '') &&
-          (!isNaN(globalThis.ip1)) && (!isNaN(globalThis.ip2)) && (!isNaN(globalThis.ip3)) && (!isNaN(globalThis.ip4)) &&
+      if ((ip1 != '') && (ip2 != '') && (ip3 != '') && (ip4 != '') &&
+          (!isNaN(ip1)) && (!isNaN(ip2)) && (!isNaN(ip3)) && (!isNaN(ip4)) &&
           // (ip1 >= '0') && (ip2 >= '0') && (ip3 >= '0') && (ip4 >= '0') &&
           // (ip1 <= '255') && (ip2 <= '255') && (ip3 <= '255') && (ip4 <= '255') &&
           selected_lights.length>0) {
-        var ip = globalThis.ip1 + '.' + globalThis.ip2 + '.' + globalThis.ip3 + '.' + globalThis.ip4;
-        console.log(ip)
+        var ip = ip1 + '.' + ip2 + '.' + ip3 + '.' + ip4;
+
         
         var state = document.getElementById('state');
         var mode;
@@ -387,10 +296,10 @@
 
     function task(i, req) {
       setTimeout(function() {
-        console.log(req);
+        // console.log(req);
         document.getElementById("form").action = req;
         document.getElementById("form").submit();
-      }, 300 * i);
+      }, 100 * i);
     }
       
     // return
