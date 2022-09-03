@@ -1,3 +1,3 @@
 # Optimal_Circuits
 
-This a basic api to connect to SIH project
+This a basic API to connect to SIH project
