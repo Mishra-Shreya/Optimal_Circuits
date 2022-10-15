@@ -1,5 +1,5 @@
 # Optimal_Circuits
 
-This a basic API to connect to SIH project
+Basic API to connect to our SIH project (SM966 - Optimal Circuits!)
 
 demo: https://mishra-shreya.github.io/Optimal_Circuits/
